@@ -27,7 +27,7 @@ use base qw( Class::Accessor );
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 __PACKAGE__->mk_accessors( qw( name qualifier content language scheme is_empty ) );
 
@@ -77,8 +77,6 @@ Gets and sets the scheme used by the element.
 
 Gets and sets the element name (title, creator, date, etc).
 
-=cut
-
 =head2 is_empty()
 
 Gets and sets the "empty" status of an element. This is useful when
@@ -89,6 +87,12 @@ To see if the record has an creator elements:
 	if( $record->element( 'creator' )->is_empty ) {
 		# no creators
 	}
+
+
+=head2 set()
+
+This function overrides the default set() behavior in order to remove the
+is_empty flag.
 
 =cut
 
@@ -118,7 +122,7 @@ sub set {
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004 by Ed Summers, Brian Cassidy
+Copyright 2005 by Ed Summers, Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 

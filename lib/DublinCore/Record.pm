@@ -38,7 +38,7 @@ use warnings;
 use Carp qw( croak );
 use DublinCore::Element;
 
-our $VERSION        = '0.01';
+our $VERSION        = '0.02';
 our @VALID_ELEMENTS = qw(
 	title
 	creator
@@ -203,7 +203,7 @@ retrieve content, qualifier, scheme, lang attributes like so.
 	my $title = $record->title();
 	print "content:   ", $title->content(), "\n";
 	print "qualifier: ", $title->qualifier(), "\n";
-	print "schema:    ", $title->schema(), "\n";
+	print "scheme:    ", $title->scheme(), "\n";
 	print "language:  ", $title->language(), "\n";
 
 Since there can be multiple instances of a particular element type (title,
@@ -266,7 +266,7 @@ sub publisher {
 	return( $self->_getElement( 'publisher', wantarray ) );
 }
 
-=head2 contribtor()
+=head2 contributor()
 
 Retrieve contributor information in the same manner as title().
 
@@ -416,7 +416,7 @@ sub _getElement {
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2004 by Ed Summers, Brian Cassidy
+Copyright 2005 by Ed Summers, Brian Cassidy
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself. 
