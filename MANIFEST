@@ -1,0 +1,12 @@
+Changes
+lib/DublinCore/Record.pm
+lib/DublinCore/Element.pm
+Makefile.PL
+MANIFEST
+README
+t/constructor.t
+t/empty.t
+t/pod.t
+t/setters.t
+t/use.t
+META.yml                                 Module meta-data (added by MakeMaker)
